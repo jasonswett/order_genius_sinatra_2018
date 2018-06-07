@@ -1,14 +1,7 @@
 require 'sinatra'
 require 'active_record'
-
-ActiveRecord::Base.establish_connection(
-  adapter:  'postgresql',
-  host:     'localhost',
-  database: 'order_genius'
-)
-
-class Restaurant < ActiveRecord::Base
-end
+require_relative 'config/database'
+require_relative 'models/restaurant'
 
 get '/' do
   erb :index, views: 'views/restaurants', locals: { restaurants: Restaurant.all }
