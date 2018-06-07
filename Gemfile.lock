@@ -14,6 +14,8 @@ GEM
       tzinfo (~> 1.1)
     arel (9.0.0)
     concurrent-ruby (1.0.5)
+    daemons (1.2.6)
+    eventmachine (1.2.7)
     i18n (1.0.1)
       concurrent-ruby (~> 1.0)
     minitest (5.11.3)
@@ -26,6 +28,10 @@ GEM
       rack (~> 2.0)
       rack-protection (= 2.0.2)
       tilt (~> 2.0)
+    thin (1.7.2)
+      daemons (~> 1.0, >= 1.0.9)
+      eventmachine (~> 1.0, >= 1.0.4)
+      rack (>= 1, < 3)
     thread_safe (0.3.6)
     tilt (2.0.8)
     tzinfo (1.2.5)
@@ -37,6 +43,7 @@ PLATFORMS
 DEPENDENCIES
   activerecord
   sinatra
+  thin
 
 BUNDLED WITH
    1.16.2
