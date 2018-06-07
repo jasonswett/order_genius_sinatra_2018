@@ -16,9 +16,5 @@ end
 
 get '/restaurants/:id' do
   restaurant = Restaurant.find(params['id'])
-
-  %(
-    <h1>#{restaurant.name}</h1>
-    #{restaurant.phone}
-  )
+  erb :show, views: 'views/restaurants', locals: { restaurant: restaurant }
 end
