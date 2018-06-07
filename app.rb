@@ -11,7 +11,7 @@ class Restaurant < ActiveRecord::Base
 end
 
 get '/' do
-  erb :index, locals: { restaurants: Restaurant.all }
+  erb :index, views: 'views/restaurants', locals: { restaurants: Restaurant.all }
 end
 
 get '/restaurants/:id' do
